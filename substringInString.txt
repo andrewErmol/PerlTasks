@@ -1,0 +1,15 @@
+my $string = "My first project with programming langauge: perl";
+print "Enter substring: ";
+my $substring = <STDIN>;
+chomp $substring;
+
+if ($string =~ /(.*?)\Q$substring\E(.*)/) {
+    my $before = $1;
+    my $after = $2;
+
+    print "first part: $before\n";
+    print "last part: $after\n";
+} 
+else {
+    print "Entered substring is not found\n";
+}

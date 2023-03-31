@@ -1,0 +1,28 @@
+print "Enter size for array: ";
+my $length = <STDIN>;
+chomp $length;
+
+my @numbers;
+for (my $i = 0; $i < $length; $i++) {
+    push @numbers, int(rand(11));
+}
+
+print "Array: [@numbers]\n";
+
+print "Enter number for searching: ";
+my $search_number = <STDIN>;
+chomp $search_number;
+
+my $index = -1;
+for (my $i = 0; $i < $length; $i++) {
+    if ($numbers[$i] == $search_number) {
+        $index = $i;
+        last;
+    }
+}
+
+if ($index == -1) {
+    print "Number $search_number is not found\n";
+} else {
+    print "Number's index $search_number in array: $index\n";
+}
