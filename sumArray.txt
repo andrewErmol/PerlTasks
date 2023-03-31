@@ -1,0 +1,45 @@
+print "Enter count of string: ";
+my $rows = <STDIN>;
+chomp $rows;
+print "Enter count of column: ";
+my $cols = <STDIN>;
+chomp $cols;
+
+my @array1;
+my @array2;
+for (my $i = 0; $i < $rows; $i++) {
+    for (my $j = 0; $j < $cols; $j++) {
+        $array1[$i][$j] = (rand(11));
+        $array2[$i][$j] = (rand(11));
+    }
+}
+
+print "Array 1:\n";
+for (my $i = 0; $i < $rows; $i++) {
+    for (my $j = 0; $j < $cols; $j++) {
+        print "$array1[$i][$j]\t";
+    }
+    print "\n";
+}
+print "Array 2:\n";
+for (my $i = 0; $i < $rows; $i++) {
+    for (my $j = 0; $j < $cols; $j++) {
+        print "$array2[$i][$j]\t";
+    }
+    print "\n";
+}
+
+my @sum;
+for (my $i = 0; $i < $rows; $i++) {
+    for (my $j = 0; $j < $cols; $j++) {
+        $sum[$i][$j] = $array1[$i][$j] + $array2[$i][$j];
+    }
+}
+
+print "Sum of arrays:\n";
+for (my $i = 0; $i < $rows; $i++) {
+    for (my $j = 0; $j < $cols; $j++) {
+        print "$sum[$i][$j]\t";
+    }
+    print "\n";
+}
